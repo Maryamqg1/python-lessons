@@ -1,6 +1,7 @@
-def Ind_fav(fruit, fruits):
+def Ind_fav(fruit):
     def Aswr():
-        return f"I love eating {fruit()}"
+        pronoun = 'I' if fruit.__name__ == 'mine' else 'You'
+        return f"{pronoun} love eating {fruit()}"
     return Aswr
 
 @Ind_fav
