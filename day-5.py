@@ -100,8 +100,6 @@ else:
     print('go to market')
                 
 
-
-
 print('@'*30)
     
 #time__minutes
