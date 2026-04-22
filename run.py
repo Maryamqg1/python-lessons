@@ -1,4 +1,4 @@
-def Ind_fav(fruit):
+'''def Ind_fav(fruit):
     def Aswr():
         pronoun = 'I' if fruit.__name__ == 'mine' else 'You'
         return f"{pronoun} love eating {fruit()}"
@@ -13,7 +13,7 @@ def yours():
     return 'Apple'
 
 print(mine())
-print(yours())
+print(yours())'''
 
 
 '''def Ind_fav(fruit, fruits):
@@ -33,7 +33,7 @@ print(mine())
 print(yours())'''
 
 
-print('-------RECURSION-----------')
+'''print('-------RECURSION-----------')
 def func(n):
     #base case is a condition under which the recursion will stop
     if n <=10:
@@ -144,4 +144,50 @@ print(next(myiter))
 print(next(myiter))
 print(next(myiter))
 print(next(myiter))
+'''
 
+'''import datetime
+
+x = datetime.datetime(2027, 2, 27)
+
+print(x)'''
+
+'''import json
+x =  '{ "name":"prospa", "age":35, "city":"Abuja"}'
+y = json.loads(x)
+print(f"{y[f'name']} is {y[f'age']} years old and lives in {y[f'city']}")'''
+
+'''o = {
+  "name": "John",
+  "age": 30,
+  "city": "New York"}
+p = json.dumps(o)
+j=json.dumps(o, indent=4, sort_keys=True)
+print(p)
+print(j)'''
+
+import json
+import re
+status = "The forest is filled with Animals"
+state = re.search("Animals", status)
+if state:
+    print('The word is present')
+else:
+    print('The word is not present')
+
+politics = 'Tinubu must go'
+opinion = re.search("Tinubu", politics)
+if opinion:
+    print('Tinubu is still the president')
+else:
+    print('Tinubu has left')
+    
+Animals = "There are birds,fishes,snakes,monkeys,lions and elephants in the forest"
+present = re.search("snakes|Lions", Animals)
+if present:
+    print('The forest is not safe')
+else:
+    print('The forest is safe a bit')
+    
+Type = re.findall("T..e",  Animals)
+print(Type)
