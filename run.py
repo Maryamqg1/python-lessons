@@ -1457,17 +1457,17 @@ while o < len(word):
     o += 1
 #modulous…
 #--module.py
-def myName(name):
-    '''
-    function is imported in the useModule.py file
-    '''
+'''def myName(name):
+    
+    #function is imported in the useModule.py file
+    
 
     return f'Hello, i am {name}'
 #--useModule.py
 import module
 import datetime
 
-print(module.myName('maryam') + ' and the today is ' + str(datetime.date.today()))
+print(module.myName('maryam') + ' and the today is ' + str(datetime.date.today()))'''
 
 ##testings
 name = ""
