@@ -310,3 +310,6 @@ def outer():
 
 outer()
 print("Global:", x) # for 3
+
+#Decorators
+
