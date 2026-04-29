@@ -49,3 +49,69 @@ class Transportation:
     self.colour = colour
 Train = Transportation('train')
 print(f'I borded a {Train.colour} {Train.type}')
+
+print('=======METHODS OF A CLASS=========')
+
+class Vehicle:
+  #class level properties
+  '''
+  access : classname.propertyname
+  usage: Vehicle.manual
+  result: ''
+  '''
+  manual = ''
+  
+  #object level properties
+  '''
+  access: Objectname.propertyname
+  usage: car1.brand, car1.model
+  '''
+  def __init__(self,brand, model):
+    self.brand = brand
+    self.model = model
+   
+   #methods/functions of a class 
+  def myfunc(self):
+    print(f"My vehicle is a {self.model} {self.brand}`")
+    
+  #method to change the value of a class level property
+  def change_manual(self):
+    Vehicle.manual = 'new manual'
+    
+    
+car1 = Vehicle('Toyota', 'Corolla')
+print(car1.brand)
+print(car1.model)
+
+car1.myfunc()
+print(Vehicle.manual)
+car1.change_manual()
+
+print('===METHODS WITH PARAMETERS===')
+class Sum:
+  def num(self, a, b):
+    return f'This is the sum of {a} and {b}: {a + b}'
+  
+sum1 = Sum()
+print(sum1.num(5, 10))
+
+
+print('==METHODS ACCESSING PROPERTIES==')
+class Students:
+  def __init__(self,  average, score=80):
+    self.score = score
+    self.average = average
+    
+  #function that mod a prperty of the class
+  def check_score(self):
+    if self.score > self.average:
+      self.score += 1
+      return 'Above average'
+    else:
+      self.score -= 1
+      return 'Below average'
+    
+  #object
+student1 = Students(average=75, score=10)
+print(student1.check_score())
+print(student1.check_score())
