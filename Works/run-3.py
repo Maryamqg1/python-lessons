@@ -115,3 +115,27 @@ class Students:
 student1 = Students(average=75, score=10)
 print(student1.check_score())
 print(student1.check_score())
+
+print('====INHERITANCE====')
+class parent:#base class
+  def __init__(self, name, habitat):
+    self.name= name
+    self.habitat= habitat
+    
+  def move(self):
+    return f'{self.name} now lives in {self.habitat}'
+  
+class child(parent): #derived class
+  #child class inherits the properties and methods of the parent class
+  def __init__(self, name, habitat, age, gender):
+    parent.__init__(self, name, habitat) #calling the init function of the parent class
+    self.age = age
+    self.gender = gender
+    
+  def move(self):
+    return f'{self.name} is a {self.age} year old {self.gender} that now lives in {self.habitat}'
+  
+parent1 = parent(name='John', habitat='New York')
+print(parent1.move())  
+child1 = child(age=10, gender='male', name='Jack', habitat='Los Angeles')
+print(child1.move())
