@@ -34,6 +34,26 @@ def yours():
 print(mine())
 print(yours())
 
+# different style
+def Ind(pronoun):
+    def Fav(fruit):
+        def Aswr():
+            return f"{pronoun} love eating {fruit()}"
+        return Aswr
+    return Fav
+
+
+@Ind ("I")
+def first():
+    return "Banana"
+
+@Ind ("You")
+def second():
+    return "Apple"
+
+print(first())
+print(second())
+
 #changing casing
 def casing(words):
     def Action():
