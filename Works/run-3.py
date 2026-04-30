@@ -139,3 +139,30 @@ parent1 = parent(name='John', habitat='New York')
 print(parent1.move())  
 child1 = child(age=10, gender='male', name='Jack', habitat='Los Angeles')
 print(child1.move())
+
+class mylife:
+  def __init__(self, name, age, hobby):
+    self.name = name
+    self.age = age
+    self.hobby = hobby
+    
+  def status(self):
+    return f'{self.name} is {self.age} years old and loves {self.hobby}'
+  
+  
+class mystatus(mylife):
+    def __init__(self, name, age, hobby, job):
+      mylife.__init__(self, name, age, hobby)
+      self.name = name
+      self.age =age
+      self.hobby = hobby
+      self.job = job
+      
+    def status(self):
+      return f'{self.name} is a {self.age} years old {self.job} that likes {self.hobby}'
+  
+mylife1 = mylife(name='Annabelle', age=25, hobby='dancing')
+print(mylife1.status())
+mystatus1 = mystatus(name='Annabelle', age=25, hobby='dancing', job='Accountant')
+print(mystatus1.status())
+

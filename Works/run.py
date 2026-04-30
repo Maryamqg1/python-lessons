@@ -1,38 +1,63 @@
-##run
-def Ind_fav(pronoun, fruits):
+
+def Ind_fav(fruit):
     def Aswr():
-        return f"{pronoun} love eating {fruits()}"
+        return f"I love eating {fruit()}"
     return Aswr
 
 @Ind_fav
+def first():
+    return 'Banana'
+
+@Ind_fav
+def second():
+    return 'Apple'
+
+print(first())
+print(second())
+
+#adding specified pronouns
+
+def spd_fav(favs):
+    def Aswr():
+        pronoun, fruits = favs()
+        return f"{pronoun} love eating {fruits}"
+    return Aswr
+
+@spd_fav
 def mine():
     return 'I','Banana'
 
-@Ind_fav
+@spd_fav
 def yours():
     return 'You','Apple'
 
 print(mine())
 print(yours())
 
+#changing casing
+def casing(words):
+    def Action():
+        return words().lower()
+    return Action
 
-def Ind_fav(fruit, fruits):
-    def Aswr():
-        return f"I love eating {fruit()}"
-    return Aswr
+@casing
+def first ():
+    return'MAVELOUS'
+print (first())
+    
+def casing(words):
+  def inn(x):
+    return words(x).upper()
+  return inn
 
-@Ind_fav
-def mine():
-    return 'Banana'
+@casing
+def myfunction(name):
+  return f"Hello {name}"
 
-@Ind_fav
-def yours():
-    return 'Apple'
-
-print(mine())
-print(yours())
+print(myfunction("John"))
 
 print('-------RECURSION-----------')
+
 def func(n):
     #base case is a condition under which the recursion will stop
     if n <=10:
@@ -149,6 +174,46 @@ import datetime
 x = datetime.datetime(2027, 2, 27)
 
 print(x)
+
+def a1(n):
+    return lambda a, c : a + c + n
+def a2(u):
+    return lambda b : b * u
+a3 = a1(3)  
+a4 = a2(5)
+print(a3(11, 4))
+print(a4(7))
+
+class MyNumbers:
+  def __iter__(self):
+   
+    self.a = 0
+    return self
+
+  def __next__(self):
+    if self.a<=29:
+        self.a += 3
+        x = self.a
+
+        return x
+    else:
+        raise StopIteration
+
+myclass = MyNumbers()
+myiter = iter(myclass)
+
+print(next(myiter))
+print(next(myiter))
+print(next(myiter))
+print(next(myiter))
+print(next(myiter))
+print(next(myiter))
+print(next(myiter))
+print(next(myiter))
+print(next(myiter))
+print(next(myiter))
+'''print(next(myiter))''' # prints stopiteration error because the condition is not met
+
 
 import json
 x =  '{ "name":"prospa", "age":35, "city":"Abuja"}'

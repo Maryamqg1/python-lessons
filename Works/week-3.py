@@ -312,4 +312,8 @@ outer()
 print("Global:", x) # for 3
 
 #Decorators
+def my_characteristics(list):
+    def my_character():
+        return list()
+    return my_character
 
