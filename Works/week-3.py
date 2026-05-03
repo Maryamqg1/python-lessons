@@ -506,3 +506,49 @@ def func():
   return "Maryam"
 print (func())
 print (func.__name__)
+
+#python Lambda function - anonymous function
+#syntax - lambda arguments: expression
+x = lambda a: a + 10
+print(x(3))
+
+y = lambda u,z: u*z
+print(y(5,7))
+
+p = lambda q,r,s: q+r+s
+print(p(3,5,7))
+
+def func(a):
+  return lambda b : b*a
+def_func = func(7)
+print(def_func(3))
+
+def myfunc(g):
+  return lambda d : d + g
+func2 = myfunc(9)
+func3 = myfunc(7)
+print (func2(3))
+print (func3(3))
+
+#lambda built in function
+#map() - applies a function to every item in an iterable
+#filter() - creates a list of items for which a function returns True
+#sorted() - can use a lambda as a key for custom sorting
+
+exp = (1,3,5,7,9)
+square = list(map(lambda t : t ** 2, exp))
+print (square)
+
+exp2 = (1,2,3,4,5,6,7,8,9,10)
+odd = tuple(filter(lambda o: o%2 !=0,exp2))
+even = list(filter(lambda l: l%2 ==0,exp2))
+print(odd)
+print(even)
+
+patients = [("praise",27,"malaria"),("john",25,"diabetes"),("favour",39,"cancer")]
+sorted_patients = sorted(patients, key = lambda n:n[2])
+print(sorted_patients)
+
+words = ["apple", "pie", "banana", "cherry"]
+sorted_words = sorted(words, key=lambda x: len(x))
+print(sorted_words)
