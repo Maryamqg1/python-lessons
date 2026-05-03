@@ -552,3 +552,80 @@ print(sorted_patients)
 words = ["apple", "pie", "banana", "cherry"]
 sorted_words = sorted(words, key=lambda x: len(x))
 print(sorted_words)
+
+#Recursion - a function that calls itself
+#similar to a while loop, so it must be written with caution, by giving a base case to stop the loop
+def countdown(n):
+  if n <= 0:
+    print("Done!")
+  else:
+    print(n)
+    countdown(n - 1)
+countdown(5)
+
+def func():
+  pass
+  
+def up(u):
+  if u>=11:
+    print("Count Executed")
+  else:
+    print(u)
+    up(u+1)
+up(1)
+
+#base and recursive case
+#base case - A condition that stops the recursion
+#recursive case - The function calling itself with a modified argument
+
+#Without a base case, the function would call itself forever, causing a stack overflow error.
+
+def factorial(n):
+  # Base case
+  if n == 0 or n == 1:
+    return 1
+  # Recursive case
+  else:
+    return n * factorial(n - 1)
+
+print(factorial(5))
+
+def number(x):
+  if x == 0:
+    return 'input a greater number'
+  else:
+    return f'{x} is greater than zero' 
+print (number(7))
+
+#fibonacci sequence
+#the sum of the two preceding numbers
+def fibonacci(n):
+  if n <= 1:
+    return n
+  else:
+    return fibonacci(n - 1) + fibonacci(n - 2)
+
+print(fibonacci(9))
+# to find the 9th number of the fibonacci sequence
+# 0, 1, 1, 2, 3, 5, 8, 13, 21, 34
+# 8 + 5
+
+def sumlist(numbers):
+  if len(numbers) == 0:
+    return 0
+  else:
+    return numbers[0] + sumlist(numbers[1:])
+
+mylist = [1, 2, 3, 4, 5]
+print(sumlist(mylist))
+
+def find_max(numbers):
+  if len(numbers) == 1:
+    return numbers[0]
+  else:
+    max_of_rest = find_max(numbers[1:])
+    return numbers[0] if numbers[0] > max_of_rest else max_of_rest
+
+my_list = [3, 1, 7, 2, 9, 11]
+print(find_max(my_list))
+
