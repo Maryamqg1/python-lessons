@@ -271,6 +271,7 @@ outer()
 print("Global:", x) # for 3
 
 #Decorators
+#decorator format
 def names(list):
     def myname():
         return list()
@@ -361,4 +362,53 @@ print (patient2())
 def patient3():
     return "cancer"
 print (patient3())
+
+#how to use a decorator to modify the output of a function
+def decorator(funcname):
+    def nested(): #nested/inner/wrapper function
+        return f"{funcname()} is being decorated"
+    return nested
+@decorator
+def func():
+    return 'the function'
+
+def changecase(func):
+  def myinner():
+    return func().upper()
+  return myinner
+
+@changecase
+def myfunction():
+  return "Hello Sally"
+
+print(myfunction())
+
+@changecase
+def myfunction2():
+  return "I am learning Python"
+print(myfunction2())
+
+#to pass arguments to a decorator
+def diagnosis(Type):
+    def patient(state):
+        return f"The patient is suffering from {Type(state)}"
+    return patient
+
+@diagnosis
+def patient1(illness):
+    return f"stage 3 {illness}, he is in a very critical condition"
+print(patient1('cancer'))
+
+#multiple arguments in a decorated function
+def Hunger(Food):
+  def mystomach(*args, **kwargs):
+    return Food(*args, **kwargs)
+  return mystomach
+
+@Hunger
+def myfood(Type, protein):
+  return f"I want to eat {Type} with a very big {protein}"
+
+print(myfood("Jollof rice", "chicken"))
+
 
