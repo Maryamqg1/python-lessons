@@ -1,45 +1,4 @@
-#day18
-def names(list):
-    def myname():
-        return list()
-    return myname
-
-@names
-def yourname ():
-    return 'john'
-print (yourname())
-
-@names
-def hisname ():
-    return'peter'
-print (hisname())
-
-@names
-def hername ():
-    return'precious'
-print (hername())
-
-def Nation(country):
-    def race ():
-        return country()
-    return race
-
-@Nation
-def white ():
-    return 'America'
-print (white())
-
-@Nation
-def black ():
-    return 'Nigeria'
-print(black())
-
-@Nation
-def Asians ():
-    return 'China'
-print(Asians())
-
-#day19
+#day18 & day19
 #Functions
 def city(): #creating a function named city
     print("We're in the city of Abuja") #the output you want to get when you call you function
@@ -312,6 +271,55 @@ outer()
 print("Global:", x) # for 3
 
 #Decorators
+def names(list):
+    def myname():
+        return list()
+    return myname
+
+@names
+def yourname ():
+    return 'john'
+print (yourname())
+
+@names
+def hisname ():
+    return'peter'
+print (hisname())
+
+@names
+def hername ():
+    return'precious'
+print (hername())
+
+def Nation(country):
+    def race ():
+        return country()
+    return race
+
+@Nation
+def white ():
+    return 'America'
+print (white())
+
+@Nation
+def black ():
+    return 'Nigeria'
+print(black())
+
+@Nation
+def Asians ():
+    return 'China'
+print(Asians())
+
+def A (Aname):
+    def A2():
+        return f"As a {Aname()} I am a decorator"
+    return A2
+@A
+def Aa ():
+    return 'letter'
+print (Aa())
+
 def my_characteristics(Attributes):
     def my_character():
         return Attributes()
@@ -320,4 +328,37 @@ def my_characteristics(Attributes):
 def attribute1():
     return 'I have a good sense of humour'
 print (attribute1())
+
+@my_characteristics
+def attribute2():
+    return 'I am a good listener'
+print (attribute2())
+
+def Hospital(diagnosis):
+    def patient():
+        return diagnosis()
+    return patient
+@Hospital
+def patient1():
+    return 'The patient is suffering from malaria'
+print (patient1())
+
+def Hospital(diagnosis):
+    def patient():
+        return f"The patient is suffering from {diagnosis()}"
+    return patient
+@Hospital
+def patient1():
+    return 'malaria'
+print (patient1())
+
+@Hospital
+def patient2():
+    return 'typhoid'
+print (patient2())
+
+@Hospital
+def patient3():
+    return "cancer"
+print (patient3())
 
