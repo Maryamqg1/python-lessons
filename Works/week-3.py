@@ -450,3 +450,59 @@ def func():
 	return "Come Here"
     
 print(func())
+
+#multiple decorators
+def dec1 (call):
+  def l2 ():
+    return f"Hello {call()}"
+  return l2
+  
+def dec2 (greet):
+  def l22 ():
+    return f"how has your day been {greet()}"
+  return l22
+  
+def dec3(name):
+  def l222 ():
+    return f"Maryam {name()}"
+  return l222
+ 
+@dec1
+@dec2
+@dec3
+def Ask():
+  return ",I Hope you had a great day"
+print (Ask())
+
+#function metadata
+def func():
+  return "Great job today!"
+print(func())
+print(func.__name__)
+
+  
+def dec(name):
+  def l2 ():
+    return f"{name()}"
+  return l2
+ 
+@dec
+def func():
+  return "Maryam"
+print (func())
+print (func.__name__)
+
+
+import functools
+
+def dec(name):
+  @functools.wraps(name)
+  def l2 ():
+    return f"{name()}"
+  return l2
+ 
+@dec
+def func():
+  return "Maryam"
+print (func())
+print (func.__name__)
