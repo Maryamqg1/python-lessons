@@ -412,3 +412,41 @@ def myfood(Type, protein):
 print(myfood("Jollof rice", "chicken"))
 
 
+
+
+def layer1(l1):
+    def layer2(l2):
+        def layer3():
+            if l1 == "Type1":
+                Type = l2().upper()
+            else:
+                Type = l2().lower()
+            return Type
+        return layer3
+    return layer2
+
+
+@layer1("Type1")
+def func():
+    return "Come Here"
+
+
+print(func())
+
+def layer1(l1):
+    def layer2(l2):
+        def layer3():
+            if l1 == 'Type1': 
+                Type = l2().upper()
+            else:
+                Type = l2().lower()
+            return Type
+        return layer3
+    return layer2
+
+
+@layer1('Type2') 
+def func():
+	return "Come Here"
+    
+print(func())
