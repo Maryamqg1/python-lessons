@@ -629,3 +629,5 @@ def find_max(numbers):
 my_list = [3, 1, 7, 2, 9, 11]
 print(find_max(my_list))
 
+#Generators
+#functions that can pause and resume their execution
