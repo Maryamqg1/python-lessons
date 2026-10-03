@@ -1,11 +1,11 @@
 #PIP
 
-'''from camelcase import CamelCase
+from camelcase import CamelCase
 c = CamelCase()
 txt = "hello world"
-print(c.hump(txt))'''
+print(c.hump(txt))
 
-'''try:
+try:
   print(x)
 except:
   print("An exception occurred")
@@ -50,7 +50,7 @@ if a < 0:
 x = "hello"
 
 if not type(x) is int:
-  raise TypeError("Only integers are allowed")'''
+  raise TypeError("Only integers are allowed")
 
 h = ["Visitors", "wonderland"]
 print(f"Hello, {h[0]}. Welcome to {h[1]}!")
